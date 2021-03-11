@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classifications</title>
+</head>
+<body>
+    <h1>Michigan New Small Business Rates in the Past 12 Months</h1>
+    <h2>Ratio Created: New Small Businesses/Total Small Businesses Per County</h2>
+    <h2>2018 Census Data</h2>
+    <h2><u>Natural Breaks</u></h2>
+    <h3>This mode of classification creates easy to read numbers but the width of legend entries is distorted as the number of businesses climbs because there are less counties that fit that category/color.</h3>
+    <a href="Natural_Breaks.png">
+    <img src="Natural_Breaks.png" alt="WGS84" width='500px'>
+    </a>
+    <h2><u>Equal Counts</u></h2>
+    <h3>This map solves the issue of unequal distribution but the numbers are broken into a way that is not useful for this data because there cannot be part of a small business.</h3>
+    <a href="./Equal_Counts.png">
+    <img src="./Equal_Counts.png" alt="Aitoff" width='500px'>
+    </a>
+    <h2><u>Quantiles</u></h2>
+    <h3>This map does the best job of evenly spreading out the color but distorts the amount of businesses needed to "qualify" for darker color counties because the last subset is so large.</h3>
+    <a href="./Quantiles.png">
+    <img src="./Quantiles.png" alt="Projection" width='500px'>
+    </a>
+</body>
+</html>
