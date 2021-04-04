@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 10</title>
+</head>
+<body>
+<h1>Homework 10: Bus Accessibility to Ann Arbor Polling Places </h1>
+<h2>Claire Bradley</h2>
+<h3>This map answers the question, "how many polling places are inaccessible by bus?" In this example I defined inaccessible as more than .25 mi of walking distance from the stop to the polling place. Because people need to be incentivized to vote, making it onerous by having long walking distances will make it less likely one would go through the trouble to vote. First I created a city outline layer by dissolving neighborhood boundary lines. Then I created a buffer around bus stops that had a .25 mi radius. Lastly, I created an intersect layer to find out which polling places were within the bus stop buffer zones and turned those to be green for "compliant." The polling places that were not within .25 mile proximity to a bus stop were colored red for "non-compliant." I did not show the bus stops that are irrelevant to the analysis in this specific map.     </h3>
+<!-- Your map goes here -->
+<a href="Homework 10 Map">
+    <img src="Accessible Polling Places.png" alt="your map" width='500px'>
+    </a>
+
+<!-- Link to your shapefile in Github and you CSV -->
+<h2>Data used for this project</h2>
+    <a href="https://www.a2gov.org/services/data/Pages/default.aspx"> Link to Shapefile Data Sets</a>
+
+</body>
+</html>
