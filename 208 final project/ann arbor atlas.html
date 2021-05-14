@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ENGL 208 Final Project</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+  <style type="text/css">
+    body {
+       margin: 0;
+       padding: 0;
+    }
+    html, body, #map{
+       width: 100%;
+       height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+      var map = L.map('map').setView([42.020532742300674, -83.74215483870154], 12.4);
+
+      /// Barton
+
+      var BartonIcon = L.icon({
+        iconUrl: 'https://cdn.iconscout.com/icon/premium/png-256-thumb/river-1806362-1533955.png',
+        iconSize: [50,50],
+        popupAnchor: [0,0]
+      });
+
+      var BartonPopup = "<b>Barton Pond Swimming Spot:</b> The smell of independence and late summer nights with friends. Splashing in and out of the water, picnicing on the dock, and giggling under the stars.<br/><img src='IMG_0173.jpg'width='200px'/><img src='IMG_1535.jpg'width='200px'/><img src='IMG_5239.jpg'width='200px'/>";
+
+      var BartonMarker = L.marker([42.3093663793044, -83.75501921519299], {icon: BartonIcon}).addTo(map)  
+        .bindPopup(BartonPopup)
+        .openPopup();
+
+      /// Dad's Office
+
+      var OfficeIcon = L.icon({
+        iconUrl: 'https://pbs.twimg.com/profile_images/593938168061255681/8tXfjag4_400x400.jpg',
+        iconSize: [30,30],
+        popupAnchor: [0,0]
+      });
+
+      var OfficePopup = "<b>My Dad's 11th Floor Office:</b> Views of the city from above, awe at the beauty outside and the ingenuity inside.<br/><img src='office_1.jpeg'width='200px'/><img src='office_2.jpeg'width='200px'/>";
+
+      var OfficeMarker = L.marker([42.28212117098464, -83.72717140209717], {icon: OfficeIcon}).addTo(map)  
+        .bindPopup(OfficePopup)
+        .openPopup();
+
+      /// TOP
+
+      var TOPIcon = L.icon({
+        iconUrl: 'https://cdn3.iconfinder.com/data/icons/festivals-ultra-color/60/023_-_Stage-512.png',
+        iconSize: [30,30],
+        popupAnchor: [0,0]
+      });
+
+      var TOPPopup = "<b>Top of the Park:</b> The spot to be for hours on end running into everyone you know in the city. Live music and local foodtrucks as a backdrop to emerging from a school year and breathing in summer.<br/><img src='IMG_0296.jpg'width='200px'/><img src='IMG_0299.jpg'width='200px'/><img src='IMG_0298.jpg'width='200px'/>";
+
+      var TOPMarker = L.marker([42.279669600278964, -83.73827150209726], {icon: TOPIcon}).addTo(map)  
+        .bindPopup(TOPPopup)
+        .openPopup();
+
+      /// Peony Garden
+
+      var PeonyIcon = L.icon({
+        iconUrl: 'peony.png',
+        iconSize: [30,30],
+        popupAnchor: [0,0]
+      });
+
+      var PeonyPopup = "<b>Arboretum Peony Garden:</b> An elated end-of-spring symbol after the crushing winter. Brings up the mood of even the littlest of kids.<br/><img src='IMG_0229.jpg'width='200px'/><img src='IMG_0236.jpg'width='200px'/><img src='IMG_0238.jpg'width='200px'/>";
+
+      var PeonyMarker = L.marker([42.2812010005181, -83.72554233504827], {icon: PeonyIcon}).addTo(map)  
+        .bindPopup(PeonyPopup)
+        .openPopup();
+
+      /// AATA Transit Center
+
+      var BusIcon = L.icon({
+        iconUrl: 'https://cdn.iconscout.com/icon/premium/png-256-thumb/bus-color-1923326-1629114.png',
+        iconSize: [55,55],
+        popupAnchor: [0,0]
+      });
+
+      var BusPopup = "<b>Bus Transit Center Downtown:</b> My first taste of true autonomy in travel. No longer reliant on parents or cars, the city was mine to wander. The launch point of many Target runs simply because I could.<br/><img src='IMG_0245.HEIC'width='200px'/><img src='IMG_7116.jpg'width='200px'/>";
+
+      var BusMarker = L.marker([42.27854055800605, -83.74649776346332], {icon: BusIcon}).addTo(map)  
+        .bindPopup(BusPopup)
+        .openPopup();
+
+      /// Big Bach Playground
+
+      var BachIcon = L.icon({
+        iconUrl: 'https://cdn1.iconfinder.com/data/icons/city-and-village-line-color-urban-landscape/512/public_park-512.png',
+        iconSize: [45,45],
+        popupAnchor: [0,0]
+      });
+
+      var BachPopup = "<b>The Big Bach Playground:</b> First kisses, first sips of alcohol, first comings out--the key to any secret locked up inside of someone. Many dark late nights spent being a teenager in the comfort of childhood play structures.<br/><img src='IMG_6056.JPG'width='200px'/><img src='IMG_2730.jpg'width='200px'/>";
+
+      var BachMarker = L.marker([42.277033296176604, -83.75683231484567], {icon: BachIcon}).addTo(map)  
+        .bindPopup(BachPopup)
+        .openPopup();
+
+      /// Vet's Ice Arena
+
+      var VetsIcon = L.icon({
+        iconUrl: 'https://cdn4.iconfinder.com/data/icons/snow-color/512/hockey_sport_game_play-512.png',
+        iconSize: [45,45],
+        popupAnchor: [0,0]
+      });
+
+      var VetsPopup = "<b>Vet's Ice Arena:</b> The spot I took a risk that has paid itself back through incredible friends ten times over. While many decisions have unknowlingly shaped me, none so measurably as this one. So many losses shaken off with laughter in the healthist and happiest way.<br/><img src='IMG_5226.JPG'width='200px'/>";
+
+      var VetsMarker = L.marker([42.281544307239365, -83.77770794759226], {icon: VetsIcon}).addTo(map)  
+        .bindPopup(VetsPopup)
+        .openPopup();
+
+      /// Argus Farm Stop
+
+      var ArgusIcon = L.icon({
+        iconUrl: 'https://www.secondwavemedia.com/concentrate/images/Features/Issue_415/argus_logo_resized.jpg',
+        iconSize: [40,20],
+        popupAnchor: [0,0]
+      });
+
+      var ArgusPopup = "<b>Argus Farm Stop:</b> A magical revamp from run down gas station to a flourishing year-round farmer's market. The neighborhood symbol of local community investment and regrowth.<br/><img src='argus3.jpeg'width='200px'/><img src='argus4.jpeg'width='200px'/>";
+
+      var ArgusMarker = L.marker([42.27900617457592, -83.75203652508438], {icon: ArgusIcon}).addTo(map)  
+        .bindPopup(ArgusPopup)
+        .openPopup();
+              
+      /// Detroit Street Filling Station
+
+      var DSFSIcon = L.icon({
+        iconUrl: 'https://img.icons8.com/color/452/restaurant-.png',
+        iconSize: [30,30],
+        popupAnchor: [0,0]
+      });
+
+      var DSFSPopup = "<b>Detroit Street Filling Station:</b> A COVID oasis where we could eat takeout outside in a park distanced from friends in the depths of the crisis. A local business, tight on budget, yet offered a no questions asked free meal to anyone in need throughout the entire pandemic.<br/><img src='IMG_2696.jpg'width='200px'/>";
+
+      var DSFSMarker = L.marker([42.283505882352436, -83.7463582885137], {icon: DSFSIcon}).addTo(map)  
+        .bindPopup(DSFSPopup)
+        .openPopup();
+      
+      /// Elbel
+
+      var ElbelIcon = L.icon({
+        iconUrl: 'https://cdn4.iconfinder.com/data/icons/carnival-and-amusement-flat-colors/64/marching_band_bass_drum-512.png',
+        iconSize: [40,40],
+        popupAnchor: [0,0]
+      });
+
+      var ElbelPopup = "<b>Elbel Field:</b> Many picnic dinners spent listening to the stops and starts of the rhythm and tunes that run Ann Arbor. Twirling cartwheels in the grass in sync with the spinning block M flags on crisp fall evenings. Photo Source: Ann Arbor News<br/><img src='mmb.jpg'width='300px'/>";
+
+      var ElbelMarker = L.marker([42.2712001309939, -83.745426220992], {icon: ElbelIcon}).addTo(map)  
+        .bindPopup(ElbelPopup)
+        .openPopup();
+
+      /// Piano Lessons
+
+      var PianoIcon = L.icon({
+        iconUrl: 'https://image.flaticon.com/icons/png/512/195/195183.png',
+        iconSize: [30,30],
+        popupAnchor: [0,0]
+      });
+
+      var PianoPopup = "<b>Renee's House for Piano Lessons:</b> Anger held tight behind my lips; a bursting zipper. Always a push (more like a shove) to make it happen but a non-negotiable in my family to make it there, prepared, each week.<br/><img src='DSCN0350.jpg'width='200px'/>";
+
+      var PianoMarker = L.marker([42.29300164092848, -83.75312418879773], {icon: PianoIcon}).addTo(map)  
+        .bindPopup(PianoPopup)
+        .openPopup();
+
+      /// Argo
+
+      var ArgoIcon = L.icon({
+        iconUrl: 'http://getdrawings.com/free-icon/kayak-icon-58.png',
+        iconSize: [50,50],
+        popupAnchor: [0,0]
+      });
+
+      var ArgoPopup = "<b>Argo Canoe Livery:</b> A location known in my life for bobbing. 9pm trips to help my Dad flip back over his kayak during his roll practices so I could enjoy the dimming glow of sun being replaced by moonshine reflected in the calm river surface.<br/><img src='argo1.jpeg'width='200px'/><img src='argo2.jpeg'width='200px'/>";
+
+      var ArgoMarker = L.marker([42.29107260355122, -83.74495686233779], {icon: ArgoIcon}).addTo(map)  
+        .bindPopup(ArgoPopup)
+        .openPopup();
+
+      /// Roos Roast
+
+      var RoosIcon = L.icon({
+        iconUrl: 'roos.png',
+        iconSize: [30,30],
+        popupAnchor: [0,0]
+      });
+
+      var RoosPopup = "<b>Roos Roast:</b> The best food in Ann Arbor with the kindest workers and owner. Hours spent at the oblong table in back corner working through college essays that would lauch me away from that very place. Only fitting that it is the go-to spot for many hellos and goodbyes with friends on visits home.<br/><img src='roos.jpeg'width='200px'/>";
+
+      var RoosMarker = L.marker([42.27975594178243, -83.74773784518054], {icon: RoosIcon}).addTo(map)  
+        .bindPopup(RoosPopup)
+        .openPopup();
+      
+      /// White Lotus Farm
+
+      var WLFIcon = L.icon({
+        iconUrl: 'https://cdn1.vectorstock.com/i/1000x1000/89/65/farm-house-landscape-flat-color-line-icon-vector-27438965.jpg',
+        iconSize: [40,40],
+        popupAnchor: [0,0]
+      });
+
+      var WLFPopup = "<b>White Lotus Farm:</b> The non-natural symbol of primary growth--building back from scratch after a fire. A COVID-time gem that allowed for a beautiful bike rides, sometimes with family friends, and always with fresh farm goods and baby goats at the end of the road. Photo Source: White Lotus Farm<br/><img src='wlf.jpeg'width='200px'/>";
+
+      var WLFMarker = L.marker([42.26648033767673, -83.87159421078881], {icon: WLFIcon}).addTo(map)  
+        .bindPopup(WLFPopup)
+        .openPopup();
+
+      /// Treasure Mart
+
+      var TMIcon = L.icon({
+        iconUrl: 'https://thumbs.dreamstime.com/b/antique-store-shop-retro-facade-illustration-flat-style-vector-eps-file-113205790.jpg',
+        iconSize: [40,40],
+        popupAnchor: [0,0]
+      });
+
+      var TMPopup = "<b>Treasure Mart:</b> Jam-packed with history, the early 1900s house sits urging exploration of its rooms and its eccletic mix of everything. A grumpy man in a cowboy hat and a scraggly beard always at the register to read off, in monotone, the total of the goods--always an incredible steal. A victim to the COVID financial crisis, this lively, creative and deeply affordable used goods store will be missed not only by the Kerrytown District but by my Dad who loved to persue and drag us with him (not kicking or screaming) to do so.<br/><img src='IMG_6547.jpg'width='200px'/>";
+
+      var TMMarker = L.marker([42.28589788537014, -83.74453330024349], {icon: TMIcon}).addTo(map)  
+        .bindPopup(TMPopup)
+        .openPopup();
+
+      /// Current House
+
+      var HouseIcon = L.icon({
+        iconUrl: 'https://previews.123rf.com/images/tatianasun/tatianasun1712/tatianasun171200004/91002386-home-icon-house-color-symbol-vector-isolated-flat-illustration-side-view-real-estate-rent-house-.jpg',
+        iconSize: [35,35],
+        popupAnchor: [0,0]
+      });
+
+      var HousePopup = "<b>My house: 2008-Present</b> Four people, one dog and an open invite to be the crashpad for anyone at anytime.<br/><img src='house1.jpeg'width='200px'/><img src='house2.jpeg'width='200px'/><img src='IMG_2520.jpg'width='200px'/>";
+
+      var HouseMarker = L.marker([42.275503051477905, -83.75446214314874], {icon: HouseIcon}).addTo(map)  
+        .bindPopup(HousePopup)
+        .openPopup();
+
+      /// Old Apartment
+
+      var AptIcon = L.icon({
+        iconUrl: 'https://c8.alamy.com/comp/2D8TP1R/apartment-building-color-line-icon-isolated-vector-element-2D8TP1R.jpg',
+        iconSize: [30,30],
+        popupAnchor: [0,0]
+      });
+
+      var AptPopup = "<b>111 1/2 Ann St.: 2000-2002</b> Home to a busy dad in training and a new mom settling into her routine with a baby strapped to her front. Many firsts at our little pad and my parents and my first home together.<br/><img src='apartment.jpg'width='200px'/>";
+
+      var AptMarker = L.marker([42.28245031580097, -83.74793364638718], {icon: AptIcon}).addTo(map)  
+        .bindPopup(AptPopup)
+        .openPopup();
+      
+
+      /// Basemap
+      
+      var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+        }).addTo(map);
+
+      var Tile = {
+        "Ann Arbor Basemap": Esri_WorldImagery,
+      }
+
+      var Vectors = {
+        "Barton": BartonMarker,
+        "Dad's Office": OfficeMarker,
+        "Top of the Park": TOPMarker,
+        "Peony Garden": PeonyMarker,
+        "AATA Transit Center": BusMarker,
+        "Big Bach Playground": BachMarker,
+        "Vet's Ice Arena": VetsMarker,
+        "Argus Farm Stop": ArgusMarker,
+        "Detroit Street Filling Station": DSFSMarker,
+        "Elbel": ElbelMarker,
+        "Burns Park": BPMarker,
+        "Renee's House for Piano Lessons": PianoMarker,
+        "Argo": ArgoMarker,
+        "Roos Roast": RoosMarker,
+        "White Lotus Farm": WLFMarker,
+        "Treasure Mart": TMMarker,
+        "My House": HouseMarker,
+        "My Old Apartment": AptMarker,
+      }
+
+      L.control.layers(Tile, Vectors).addTo(map);
+
+  </script>
+</body>
+</html>
