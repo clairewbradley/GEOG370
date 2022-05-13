@@ -76,11 +76,20 @@
 	 */
 
 	L.TileLayer.Provider.providers = {
-		CartoCollectiveAzure: {
+		IsabelSegunda1883: {
+			url: 'https://cartocollective.blob.core.windows.net/vieques/v1883/{z}/{x}/{y}.png',
+			options: {
+				maxZoom: 18,
+				bounds: [[18.141810, -65.447937], [18.156684, -65.436983]],
+				attribution: 'Map data: 1883 - Centro Geográfico del Ejército, España'
+			},
+		},
+
+		GeovisualizandoVieques: {
 			url: 'https://cartocollective.blob.core.windows.net/vieques/{variant}/{z}/{x}/{y}.png',
 			options: {
 				maxZoom: 18,
-				attribution: 'Map data: 1937 - Puerto Rico Department of Transportation, 1977, 1983, 2009 - USGS, 1999--National Oceanic and Atmospheric Administration, 1854, 1883 - Centro Geográfico del Ejército, España'
+				attribution: 'Orthorectified and georeferenced by the Carolina Cartography Collective. <br> Images from: 1937 - Puerto Rico Department of Transportation, <br> 1977, 1983, 2009 - USGS, 1999--National Oceanic and Atmospheric Administration, 1854, 1883 - Centro Geográfico del Ejército, España'
 			},
 			variants: {
 				1854: 'v1854',
@@ -92,21 +101,12 @@
 			}
 		},
 
-		IsabelSegunda1883: {
-			url: 'https://cartocollective.blob.core.windows.net/vieques/v1883/{z}/{x}/{y}.png',
-			options: {
-				maxZoom: 18,
-				bounds: [[18.141810, -65.447937], [18.156684, -65.436983]],
-				attribution: 'Map data: 1883 - Centro Geográfico del Ejército, España'
-			},
-		},
-
-		FarmCartoCollectiveAzure: {
+		ColmenaFinca: {
 			url: 'https://cartocollective.blob.core.windows.net/vieques/agricultura/colmena/{variant}/{z}/{x}/{y}.png',
 			options: {
 				maxZoom: 18,
 				bounds: [[18.114326,-65.44755], [18.115742, -65.444740]],
-				attribution: 'Map data: UNC Geography and the Carolina Cartography Collective'
+				attribution: 'Map imagery: UNC Geography and the Carolina Cartography Collective'
 			},
 			variants: {
 				2019: '2019',
